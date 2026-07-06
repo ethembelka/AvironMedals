@@ -1,0 +1,11 @@
+# Claude Code — local machine settings (do not commit)
+.claude/settings.local.json
+
+# OS / editor junk
+Thumbs.db
+.DS_Store
+*.swp
+
+# Python cache (if any tooling is run locally)
+__pycache__/
+*.pyc

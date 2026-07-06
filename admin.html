@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Aviron — Yönetim Paneli</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body class="admin">
+
+  <!-- ============ LOGIN ============ -->
+  <div class="login-wrap" id="loginWrap">
+    <div class="login-card">
+      <a class="logo"><svg viewBox="0 0 360 120" fill="currentColor" role="img" aria-label="Aviron"><path d="M60 92 L92 22 L108 58 L118 40 L150 92 L128 92 L108 66 L96 88 L84 62 L74 92 Z"/><text x="150" y="78" font-family="Poppins,'Segoe UI',sans-serif" font-size="62" font-weight="800" letter-spacing="4">VIRON</text></svg></a>
+      <h1>Yönetim Paneli</h1>
+      <p>Devam etmek için giriş yap</p>
+      <form id="loginForm">
+        <input type="password" id="loginPass" placeholder="Şifre" autocomplete="current-password" autofocus>
+        <div class="login-error" id="loginError"></div>
+        <button type="submit" class="btn btn-primary btn-block">Giriş Yap</button>
+      </form>
+      <div class="login-note">
+        <b>Not:</b> Bu geçici bir frontend kilididir. Gerçek güvenlik için
+        <code>/admin</code> API'ni yazdığında sunucu tarafı doğrulamayı buraya bağla.
+        Değişiklikler şimdilik bu tarayıcıda saklanır; <b>JSON Dışa Aktar</b> ile yedekleyebilirsin.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PANEL ============ -->
+  <div id="panel" style="display:none">
+    <div class="admin-topbar">
+      <div class="container">
+        <a class="logo"><svg viewBox="0 0 360 120" fill="currentColor" role="img" aria-label="Aviron"><path d="M60 92 L92 22 L108 58 L118 40 L150 92 L128 92 L108 66 L96 88 L84 62 L74 92 Z"/><text x="150" y="78" font-family="Poppins,'Segoe UI',sans-serif" font-size="62" font-weight="800" letter-spacing="4">VIRON</text></svg></a>
+        <span class="tag">Yönetim Paneli</span>
+        <div class="right">
+          <button class="btn btn-sm btn-outline" id="catalogBtn">Katalog Yükle</button>
+          <button class="btn btn-sm btn-outline" id="exportBtn">JSON Dışa Aktar</button>
+          <button class="btn btn-sm btn-outline" id="importBtn">İçe Aktar</button>
+          <button class="btn btn-sm btn-outline" id="resetBtn">Varsayılana Dön</button>
+          <a href="index.html" target="_blank" class="btn btn-sm btn-outline">Siteyi Gör ↗</a>
+          <button class="btn btn-sm btn-danger" id="logoutBtn">Çıkış</button>
+        </div>
+      </div>
+    </div>
+
+    <input type="file" id="importFile" accept="application/json" style="display:none">
+    <input type="file" id="catalogFile" accept="application/pdf" style="display:none">
+
+    <main class="admin-main">
+      <div class="container">
+        <div class="admin-head">
+          <div>
+            <h1>Ürünler</h1>
+            <p id="countLine">—</p>
+          </div>
+          <div class="admin-actions">
+            <button class="btn btn-primary btn-sm" id="newBtn">+ Yeni Ürün</button>
+          </div>
+        </div>
+        <div class="admin-grid" id="adminGrid"></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- ============ EDITOR ============ -->
+  <div class="editor-overlay" id="editorOverlay">
+    <div class="editor">
+      <div class="editor-head">
+        <h2 id="editorTitle">Ürün Düzenle</h2>
+        <button class="editor-close" id="editorClose">✕</button>
+      </div>
+      <div class="editor-body">
+        <div class="field-row">
+          <div class="field">
+            <label>Ürün ID (benzersiz, URL dostu)</label>
+            <input type="text" id="f_id" placeholder="orn: zirve">
+            <div class="help">Sadece küçük harf, rakam ve tire. Kaydettikten sonra değiştirme.</div>
+          </div>
+          <div class="field">
+            <label>Kategori</label>
+            <select id="f_category">
+              <option value="aski">Madalya Askısı</option>
+              <option value="cerceve">Çerçeve</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Fiyat (opsiyonel)</label>
+          <input type="text" id="f_price" placeholder="örn: 450">
+          <div class="help">Sadece sayı yazarsan otomatik <b>₺</b> eklenir. <b>Boş bırakılırsa sitede fiyat gösterilmez.</b></div>
+        </div>
+
+        <div class="field-row">
+          <div class="field"><label>İsim (TR)</label><input type="text" id="f_name_tr"></div>
+          <div class="field"><label>İsim (EN)</label><input type="text" id="f_name_en"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Alt başlık (TR)</label><input type="text" id="f_sub_tr" placeholder="örn: Madalya Askısı"></div>
+          <div class="field"><label>Alt başlık (EN)</label><input type="text" id="f_sub_en" placeholder="e.g. Medal Hanger"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Açıklama (TR)</label><textarea id="f_desc_tr"></textarea></div>
+          <div class="field"><label>Açıklama (EN)</label><textarea id="f_desc_en"></textarea></div>
+        </div>
+
+        <div class="field">
+          <label>Görseller (dosya adları, virgülle ayır)</label>
+          <input type="text" id="f_images" placeholder="tile_aviron.jpg, photo_triathlon_wall.jpg">
+          <div class="help">Görseller <code>assets/img/products/</code> klasöründe olmalı. Yeni görsel eklemek için dosyayı o klasöre koy, adını buraya yaz.</div>
+          <div class="img-preview" id="imgPreview"></div>
+        </div>
+
+        <div class="field field-check">
+          <input type="checkbox" id="f_customizable">
+          <label for="f_customizable" style="margin:0">Kişiye özel yazı eklenebilir</label>
+        </div>
+        <div class="field-row" id="customFields">
+          <div class="field"><label>Yazı etiketi (TR)</label><input type="text" id="f_cp_tr" placeholder="örn: Üstüne yazılacak isim"></div>
+          <div class="field"><label>Örnek metin (TR)</label><input type="text" id="f_ce_tr" placeholder="örn. AHMET YILMAZ"></div>
+        </div>
+      </div>
+      <div class="editor-foot">
+        <button class="btn btn-danger btn-sm" id="deleteBtn">Ürünü Sil</button>
+        <div style="display:flex;gap:10px">
+          <button class="btn btn-ghost btn-sm" id="cancelBtn">Vazgeç</button>
+          <button class="btn btn-primary btn-sm" id="saveBtn">Kaydet</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>

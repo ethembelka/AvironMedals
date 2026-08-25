@@ -22,7 +22,7 @@ window.AVIRON_PRODUCTS = [
       tr: "Aviron'un imzası. Dağ silüetiyle yükselen lazer kesim metal askı; zirveye giden her yarışın anısını duvarına taşır.",
       en: "Aviron's signature piece. A laser-cut metal hanger rising with a mountain silhouette — every race that led to the summit, on your wall."
     },
-    customizable: true,
+    customizable: false,
     customPrompt: { tr: "Üstüne yazılacak isim / slogan", en: "Name / slogan to engrave" },
     customExample: { tr: "örn. AHMET YILMAZ", en: "e.g. AHMET YILMAZ" },
     images: ["tile_aviron.jpg"]
@@ -37,7 +37,7 @@ window.AVIRON_PRODUCTS = [
       tr: "\"Never Give Up\" — pes etmeyenlerin manifestosu. Her madalya, vazgeçmediğin bir anın kanıtı olarak yan yana dizilir.",
       en: "\"Never Give Up\" — a manifesto for those who push through. Each medal lines up as proof of a moment you refused to quit."
     },
-    customizable: true,
+    customizable: false,
     customPrompt: { tr: "Eklemek istediğin yazı", en: "Text to add" },
     customExample: { tr: "örn. KEEP GOING", en: "e.g. KEEP GOING" },
     images: ["tile_nevergiveup.jpg"]
@@ -52,7 +52,7 @@ window.AVIRON_PRODUCTS = [
       tr: "Swim · Bike · Run. Yüz, pedalla, koş. Triatletlerin üç disiplinini tek barda buluşturan silüetli askı. İstersen bitiş sürelerini de yazdır.",
       en: "Swim · Bike · Run. Three disciplines on a single silhouetted bar. Add your finish splits if you like."
     },
-    customizable: true,
+    customizable: false,
     customPrompt: { tr: "İsim ve/veya bitiş süreleri", en: "Name and/or finish times" },
     customExample: { tr: "örn. KOEN — 5:41:26", en: "e.g. KOEN — 5:41:26" },
     images: ["tile_triathlon.jpg", "photo_triathlon_wall.jpg", "photo_triathlon_pro.jpg"]
@@ -66,7 +66,7 @@ window.AVIRON_PRODUCTS = [
       tr: "run. Asfaltın ritmi, bitiş çizgisinin coşkusu. 5K'dan maratona her koşunun madalyası burada asılı kalır.",
       en: "run. The rhythm of the road, the rush of the finish line. From 5K to marathon, every medal hangs here."
     },
-    customizable: true,
+    customizable: false,
     customPrompt: { tr: "İsim / mesafe", en: "Name / distance" },
     customExample: { tr: "örn. FINISHER 42.195K", en: "e.g. FINISHER 42.195K" },
     images: ["tile_run.jpg"]
@@ -80,7 +80,7 @@ window.AVIRON_PRODUCTS = [
       tr: "Kulaç kulaç kazanılmış her madalya için. Yüzücü silüetiyle tasarlanmış, açık su ve havuz derecelerini onurlandıran askı.",
       en: "For every medal earned stroke by stroke. A swimmer-silhouette hanger honoring your pool and open-water results."
     },
-    customizable: true,
+    customizable: false,
     customPrompt: { tr: "İsim / kulüp", en: "Name / club" },
     customExample: { tr: "örn. OPEN WATER 2026", en: "e.g. OPEN WATER 2026" },
     images: ["tile_swim.jpg", "photo_swim.jpg"]
@@ -94,7 +94,7 @@ window.AVIRON_PRODUCTS = [
       tr: "Raket motifli, kort tutkunlarına özel. Gümüş ve siyah metal seçenekleriyle; turnuva adını üstüne yazdırabilirsin.",
       en: "A racket-motif hanger for court lovers. In silver or black metal — engrave your tournament name on top."
     },
-    customizable: true,
+    customizable: false,
     customPrompt: { tr: "Turnuva / kulüp adı", en: "Tournament / club name" },
     customExample: { tr: "örn. WIMBLEDON", en: "e.g. WIMBLEDON" },
     images: ["tile_tennis.jpg", "photo_tennis_silver.jpg", "photo_tennis_black.jpg", "photo_tennis_wimbledon.jpg"]
@@ -108,7 +108,7 @@ window.AVIRON_PRODUCTS = [
       tr: "Aviron, Fransızca'da \"kürek\" demek. Ekibin silüeti ve kürek terimleriyle bezeli bu askı, regatta madalyalarının doğal evi.",
       en: "\"Aviron\" is French for rowing. Adorned with a crew silhouette and rowing terms — the natural home for your regatta medals."
     },
-    customizable: true,
+    customizable: false,
     customPrompt: { tr: "Kulüp / ekip adı", en: "Club / crew name" },
     customExample: { tr: "örn. KAYA — PAIR 8+", en: "e.g. KAYA — PAIR 8+" },
     images: ["photo_rowing.jpg", "photo_rowing2.jpg"]
@@ -122,7 +122,7 @@ window.AVIRON_PRODUCTS = [
       tr: "Dreams & Dedication. Dağ patikalarının, ultra mesafelerin ve gece koşularının askısı. Bitirdiğin parkurun adını taşı.",
       en: "Dreams & Dedication. For mountain trails, ultra distances and night runs. Carry the name of the course you conquered."
     },
-    customizable: true,
+    customizable: false,
     customPrompt: { tr: "Yarış / parkur adı", en: "Race / course name" },
     customExample: { tr: "örn. BELGRAD ULTRA TRAIL", en: "e.g. BELGRAD ULTRA TRAIL" },
     images: ["photo_trail.jpg"]
@@ -136,7 +136,7 @@ window.AVIRON_PRODUCTS = [
       tr: "Swim · Cycle · Run · Row. Tek bir branşa sığmayanlara. Tüm disiplinlerinin madalyalarını tek, güçlü bir kompozisyonda topla.",
       en: "Swim · Cycle · Run · Row. For those who won't fit in one discipline. Gather every medal in one bold composition."
     },
-    customizable: true,
+    customizable: false,
     customPrompt: { tr: "İsim / slogan", en: "Name / slogan" },
     customExample: { tr: "örn. DO IT ALL", en: "e.g. DO IT ALL" },
     images: ["photo_multisport.jpg"]
@@ -150,7 +150,7 @@ window.AVIRON_PRODUCTS = [
       tr: "\"No Pain No Gain.\" Sade, güçlü, doğrudan. Her damla terin karşılığını duvarında görmek isteyenler için.",
       en: "\"No Pain No Gain.\" Clean, strong, direct. For those who want to see the reward for every drop of sweat on their wall."
     },
-    customizable: true,
+    customizable: false,
     customPrompt: { tr: "Eklemek istediğin yazı", en: "Text to add" },
     customExample: { tr: "örn. EARNED NOT GIVEN", en: "e.g. EARNED NOT GIVEN" },
     images: ["photo_nopainnogain.jpg"]

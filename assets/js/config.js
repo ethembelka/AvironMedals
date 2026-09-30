@@ -7,7 +7,7 @@
 window.AVIRON_CONFIG = {
   // WhatsApp numarası (uluslararası format, + ve boşluk YOK). 0544 770 12 00 -> 90 5447701200
   whatsapp: "905447701200",
-  instagram: "https://instagram.com/",
+  instagram: "https://www.instagram.com/aviron.tr",
   email: "hello@avironmedals.com",
   // Para birimi simgesi — fiyatların yanında gösterilir.
   currency: "₺",
@@ -17,7 +17,20 @@ window.AVIRON_CONFIG = {
   catalogDownloadName: "Aviron-Katalog-2026.pdf",
   // Admin panel şifresi — SADECE geçici demo kilidi. Gerçek güvenlik
   // için /admin API'ni yazdığında sunucu tarafı doğrulama kullan.
-  adminPassword: "aviron2026"
+  adminPassword: "aviron2026",
+
+  // ---- Etkinlik / Lazer Kazıma Formu (etkinlik.html) ----
+  event: {
+    name: "Gaziantep Koşusu",          // etkinlik başlığı
+    city: "Gaziantep",
+    // Google Apps Script "Web App" URL'i — form gönderimleri buraya (Google Tablosu'na) düşer.
+    // ARKADAŞININ Google hesabında oluşturulacak. Hesabı/tabloyu değiştirmek için
+    // SADECE bu URL'i değiştirmen yeterli (kurulum: docs/etkinlik-form-kurulumu.md).
+    formEndpoint: "",                   // örn: "https://script.google.com/macros/s/AKfy.../exec"
+    discountCode: "GAZIANTEP10",        // teşekkür ekranında gösterilen indirim kodu
+    discountPercent: 10,
+    engravingMaxLength: 40              // kazınacak yazı için karakter sınırı (lazer alanı)
+  }
 };
 
 /* Arayüz metinleri — TR / EN */
@@ -29,10 +42,16 @@ window.AVIRON_I18N = {
     "nav.how": "Nasıl Çalışır",
     "nav.about": "Hakkımızda",
     "nav.contact": "İletişim",
+    "nav.event": "Gaziantep Koşusu",
     "nav.order": "Sipariş Ver",
     "nav.catalog": "Kataloğu İndir",
     "catalog.download": "Kataloğu İndir (PDF)",
     "price.from": "",
+
+    "event.eyebrow": "ETKİNLİK",
+    "event.title": "Gaziantep Koşusu'ndayız",
+    "event.body": "Gaziantep Koşusu'nda yanınızdayız! Yarışta kazandığınız madalyalara, etkinlik alanında yerinde lazer kazıma yapıyoruz. Adınızı, derecenizi ya da unutmak istemediğiniz o sözü yazın; biz madalyanıza kazıyalım. İşlem birkaç dakika sürer ve bu etkinliğe özel ücretsizdir.",
+    "event.cta": "Kazıma için formu doldur",
 
     "hero.tagline": "MADALYALAR DUVARI HAK EDER",
     "hero.title": "Zaferlerin bir çekmecede değil, duvarında yaşasın.",
@@ -90,10 +109,16 @@ window.AVIRON_I18N = {
     "nav.how": "How It Works",
     "nav.about": "About",
     "nav.contact": "Contact",
+    "nav.event": "Gaziantep Run",
     "nav.order": "Order Now",
     "nav.catalog": "Download Catalog",
     "catalog.download": "Download Catalog (PDF)",
     "price.from": "",
+
+    "event.eyebrow": "EVENT",
+    "event.title": "We're at the Gaziantep Run",
+    "event.body": "We're at the Gaziantep Run! We laser-engrave the medals you win, right there at the event. Write your name, your result, or that phrase you never want to forget — and we'll engrave it onto your medal. It takes a few minutes and is free for this event.",
+    "event.cta": "Fill in the engraving form",
 
     "hero.tagline": "MEDALS DESERVE WALLS",
     "hero.title": "Let your victories live on your wall, not in a drawer.",

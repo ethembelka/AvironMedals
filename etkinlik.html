@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aviron — Ücretsiz Madalya Kazıma</title>
+  <meta name="description" content="Yarış madalyana ücretsiz lazer kazıma. Bilgilerini gir, kazınmasını istediğin yazıyı yaz, gerisini bize bırak.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/event.css">
+</head>
+<body class="event-page">
+
+  <!-- ===== HERO ===== -->
+  <header class="ev-hero">
+    <div class="container">
+      <a class="ev-logo" href="index.html" title="Aviron ana sayfası">
+        <svg viewBox="0 0 360 120" fill="currentColor" role="img" aria-label="Aviron ana sayfası">
+          <path d="M60 92 L92 22 L108 58 L118 40 L150 92 L128 92 L108 66 L96 88 L84 62 L74 92 Z"/>
+          <text x="150" y="78" font-family="Poppins,'Segoe UI',sans-serif" font-size="62" font-weight="800" letter-spacing="4">VIRON</text>
+        </svg>
+      </a>
+      <a class="ev-home" href="index.html">← Aviron Ana Sayfası</a>
+      <div class="ev-badge" id="evBadge">GAZİANTEP KOŞUSU</div>
+      <h1>Madalyana özel yazını kazıyalım</h1>
+      <p>Bilgilerini gir, madalyana kazınmasını istediğin yazıyı yaz — gerisini bize bırak. İşlem birkaç dakika sürer.</p>
+      <div class="free-tag">✨ Bu etkinliğe özel ücretsiz</div>
+    </div>
+  </header>
+
+  <!-- ===== FORM CARD ===== -->
+  <main class="ev-wrap">
+    <div class="ev-card">
+
+      <!-- FORM STATE -->
+      <form id="evForm" novalidate>
+        <div class="ev-steps">
+          <span class="ev-step"><span class="n">1</span> Bilgiler</span>
+          <span class="sep"></span>
+          <span class="ev-step"><span class="n">2</span> Yazın</span>
+          <span class="sep"></span>
+          <span class="ev-step"><span class="n">3</span> Kazıyalım</span>
+        </div>
+
+        <div class="ev-field" data-field="name">
+          <label>Ad Soyad <span class="req">*</span></label>
+          <input type="text" id="evName" name="name" autocomplete="name" placeholder="Adın ve soyadın">
+          <div class="ev-error">Lütfen ad ve soyadını gir.</div>
+        </div>
+
+        <div class="ev-field" data-field="phone">
+          <label>Telefon <span class="req">*</span></label>
+          <input type="tel" id="evPhone" name="phone" inputmode="tel" autocomplete="tel" placeholder="05XX XXX XX XX">
+          <div class="ev-error">Lütfen geçerli bir telefon numarası gir.</div>
+        </div>
+
+        <div class="ev-field" data-field="email">
+          <label>E-posta</label>
+          <input type="email" id="evEmail" name="email" autocomplete="email" placeholder="ornek@eposta.com">
+          <div class="ev-error">Geçerli bir e-posta gir ya da boş bırak.</div>
+        </div>
+
+        <div class="ev-field" data-field="race">
+          <label>Yarış / Madalya Adı</label>
+          <input type="text" id="evRace" name="race" placeholder="örn. Gaziantep Yarı Maratonu 2026">
+        </div>
+
+        <!-- Highlighted engraving -->
+        <div class="ev-engrave">
+          <label>Madalyaya Kazınacak Yazı <span class="req">*</span></label>
+          <div class="sub">İsim, tarih, derece ya da bir slogan — kısa ve öz olsun.</div>
+          <div class="ev-field" data-field="engraving" style="margin:0">
+            <textarea id="evEngraving" name="engraving" rows="2" placeholder="örn. AHMET YILMAZ · 21K · 1:47:32"></textarea>
+            <div class="ev-error" style="margin-top:0">Lütfen kazınmasını istediğin yazıyı gir.</div>
+          </div>
+          <div class="ev-preview">
+            <div class="plate empty" id="evPlate"><span>önizleme burada görünecek</span></div>
+            <div class="cap">Kazıma önizlemesi (temsilîdir)</div>
+          </div>
+        </div>
+
+        <!-- Consent -->
+        <label class="ev-consent" data-field="kvkk">
+          <input type="checkbox" id="evKvkk">
+          <span>Kişisel verilerimin, kazıma hizmetinin sağlanması amacıyla işlenmesini kabul ediyorum. <a href="#" id="evKvkkLink">Aydınlatma metni</a> <span class="req">*</span></span>
+        </label>
+        <label class="ev-consent">
+          <input type="checkbox" id="evMarketing">
+          <span>Aviron'un kampanya ve yeniliklerinden haberdar olmak istiyorum. (isteğe bağlı)</span>
+        </label>
+
+        <button type="submit" class="btn btn-primary btn-block ev-submit" id="evSubmit">Gönder ve Kodumu Al</button>
+        <div class="ev-note">Gönderdikten sonra sana özel bir <b>kazıma kodu</b> vereceğiz. Kazıma standında bu kodu göster.</div>
+      </form>
+
+      <!-- SUCCESS STATE -->
+      <div class="ev-done" id="evDone">
+        <div class="ev-check">✓</div>
+        <h2>Aldık, teşekkürler! 🎉</h2>
+        <p>Madalyan hazırlanıyor. Kazıma standımıza gelip aşağıdaki kodu göstermen yeterli.</p>
+
+        <div class="ev-code">
+          <div class="lbl">Kazıma Kodun</div>
+          <div class="val" id="evCodeVal">AV-000000</div>
+        </div>
+        <div class="ev-code-hint">Bu kodu kazıma standında görevliye göster. İstersen ekran görüntüsü al.</div>
+
+        <div class="ev-offer">
+          <div class="big">Sana özel %<span id="evPct">10</span> indirim</div>
+          <div class="code" id="evDiscount">GAZIANTEP10</div>
+          <p>Madalyalarını evinde sergilemek için askı ve çerçevelerimizde geçerli.</p>
+        </div>
+
+        <div class="ev-promo-title">Madalyaların hak ettiği yer: duvarın 👇</div>
+        <div class="ev-promo" id="evPromo"><!-- JS renders product highlights --></div>
+        <a href="index.html#products" class="btn btn-ghost btn-block">Tüm Ürünleri Gör</a>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="ev-footer-note">
+    <a href="index.html">Aviron Ana Sayfası</a> ·
+    <a href="https://www.instagram.com/aviron.tr" id="evInstagram" target="_blank" rel="noopener">Instagram</a> ·
+    Madalyalar duvarı hak eder.
+  </div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/event.js"></script>
+</body>
+</html>

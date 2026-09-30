@@ -17,12 +17,12 @@ body.event-page{background:var(--bg-soft)}
 .ev-logo{display:inline-flex;color:#fff;margin-bottom:26px;transition:opacity .2s}
 .ev-logo:hover{opacity:.85}
 .ev-logo svg{height:34px}
+/* "Ana Sayfa" link: own line at top-left, above the centered logo (no overlap) */
 .ev-home{
-  position:absolute;top:20px;left:24px;z-index:3;color:rgba(255,255,255,.82);
-  font-family:var(--font-head);font-weight:600;font-size:.88rem;transition:color .2s
+  display:block;text-align:left;margin-bottom:22px;color:rgba(255,255,255,.82);
+  font-family:var(--font-head);font-weight:600;font-size:.9rem;transition:color .2s
 }
 .ev-home:hover{color:#fff}
-@media(max-width:560px){.ev-home{font-size:.8rem;top:16px;left:16px}}
 .ev-badge{
   display:inline-block;font-family:var(--font-head);font-weight:600;font-size:.78rem;
   letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);

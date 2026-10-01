@@ -26,7 +26,7 @@ window.AVIRON_CONFIG = {
     // Google Apps Script "Web App" URL'i — form gönderimleri buraya (Google Tablosu'na) düşer.
     // ARKADAŞININ Google hesabında oluşturulacak. Hesabı/tabloyu değiştirmek için
     // SADECE bu URL'i değiştirmen yeterli (kurulum: docs/etkinlik-form-kurulumu.md).
-    formEndpoint: "",                   // örn: "https://script.google.com/macros/s/AKfy.../exec"
+    formEndpoint: "https://script.google.com/macros/s/AKfycbxRR8zZENG3SUmqtWnVAbNifjl179lPktS96NVbhYcZ23dMV_5ffNy1Zjv8PwG1l_QGAA/exec",
     discountCode: "GAZIANTEP10",        // teşekkür ekranında gösterilen indirim kodu
     discountPercent: 10,
     engravingMaxLength: 40              // kazınacak yazı için karakter sınırı (lazer alanı)
